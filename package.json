@@ -12,9 +12,8 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/tailwind": "^6.0.2",
     "@fce/shared": "github:sergey-ko/fce-website-shared",
-    "@tailwindcss/postcss": "^4.2.2",
+    "@tailwindcss/vite": "^4.2.2",
     "astro": "^6.1.1",
     "tailwindcss": "^4.2.2"
   }

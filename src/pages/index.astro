@@ -1,0 +1,204 @@
+---
+import Base from '@fce/shared/layouts/Base.astro';
+import Nav from '@fce/shared/components/Nav.astro';
+import Hero from '@fce/shared/components/Hero.astro';
+import ComparisonTable from '@fce/shared/components/ComparisonTable.astro';
+import PricingTable from '@fce/shared/components/PricingTable.astro';
+import ProofGrid from '@fce/shared/components/ProofGrid.astro';
+import CTA from '@fce/shared/components/CTA.astro';
+import Footer from '@fce/shared/components/Footer.astro';
+
+import DogfoodDemo from '../components/DogfoodDemo.astro';
+import HowItWorks from '../components/HowItWorks.astro';
+
+import '../styles/theme.css';
+---
+
+<Base
+  title="Mission Control — Ship 100K Lines of Auditable Code with AI"
+  description="The SDLC control plane that orchestrates fleets of AI coding agents to produce auditable, policy-governed pull requests at scale. Built by a CTO who ships under regulation."
+  ogImage="/og-image.png"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Mission Control",
+      "description": "SDLC control plane that orchestrates AI coding agents to produce auditable, policy-governed pull requests at scale",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "2000",
+        "priceCurrency": "USD",
+        "priceValidUntil": "2027-01-01"
+      },
+      "creator": {
+        "@type": "Organization",
+        "name": "FCE Global"
+      }
+    })} />
+  </Fragment>
+
+  <Nav
+    logo="Mission Control"
+    ctaText="Book a Demo →"
+    ctaHref="#contact"
+  />
+
+  <!-- Hero with gradient background -->
+  <div style="background: linear-gradient(135deg, #0A0A0B 0%, #0B1120 50%, #0A0A0B 100%);">
+    <Hero
+      badge="THIS PAGE WAS BUILT BY MISSION CONTROL"
+      headline="Ship 100K lines of auditable code. Let AI do the coding. You hold the wheel."
+      subheadline="The SDLC control plane that orchestrates fleets of AI coding agents to produce policy-governed pull requests at scale. Every decision traceable. Every PR auditable. Every gate enforced."
+      primaryCTA={{ text: "Book a 30-min demo →", href: "#contact" }}
+      secondaryCTA={{ text: "See how it works ↓", href: "#dogfood" }}
+    />
+  </div>
+
+  <DogfoodDemo />
+
+  <HowItWorks />
+
+  <ComparisonTable
+    headline="AI coding without governance is just technical debt at scale."
+    columns={["With Mission Control", "Without Mission Control"]}
+    rows={[
+      {
+        label: "Code quality",
+        values: [
+          "Policy gates enforce consistent standards on every PR",
+          "Varies wildly between agents and prompts"
+        ]
+      },
+      {
+        label: "Audit trail",
+        values: [
+          "Full evidence bundle: task spec, reasoning, gates passed",
+          "\"The AI wrote it\" — good luck explaining that to auditors"
+        ]
+      },
+      {
+        label: "Model costs",
+        values: [
+          "Risk-tier routing: Opus for hard problems, Haiku for easy ones",
+          "One model for everything, burning budget on boilerplate"
+        ]
+      },
+      {
+        label: "Reliability",
+        values: [
+          "Temporal workflows: automatic retry, state recovery, escalation",
+          "Agent crashes = lost work, manual restart"
+        ]
+      },
+      {
+        label: "Scale",
+        values: [
+          "Parallel fleets, hundreds of PRs, one dashboard",
+          "One agent, one task, one developer babysitting"
+        ]
+      },
+      {
+        label: "Security",
+        values: [
+          "Sandboxed Coder instances, zero production access",
+          "Agents with production access, shared environments"
+        ]
+      },
+    ]}
+  />
+
+  <PricingTable
+    headline="Start with a pilot. Scale when you're ready."
+    subheadline="See the value in week one or walk away. No annual lock-in."
+    tiers={[
+      {
+        name: "Pilot",
+        price: "$5-10K",
+        description: "one-time — Prove the model on your codebase",
+        features: [
+          "4-week engagement",
+          "MC deployed on your repo",
+          "First 50 PRs together",
+          "Success metrics defined upfront",
+        ],
+        cta: { text: "Start a pilot →", href: "#contact" },
+      },
+      {
+        name: "License",
+        price: "$2-5K",
+        description: "per month — Self-hosted, full control",
+        features: [
+          "Self-hosted MC instance",
+          "Policy configuration",
+          "Model routing setup",
+          "Ongoing updates and support",
+        ],
+        cta: { text: "Get started →", href: "#contact" },
+        highlighted: true,
+      },
+      {
+        name: "Managed",
+        price: "$10-20K",
+        description: "per month — We run it for you",
+        features: [
+          "Dedicated MC instance",
+          "Tuned policies for your codebase",
+          "Priority support",
+          "Monthly review and optimization",
+        ],
+        cta: { text: "Contact us →", href: "#contact" },
+      },
+    ]}
+  />
+
+  <ProofGrid
+    headline="Battle-tested. Not beta-tested."
+    points={[
+      {
+        title: "Self-hosted and self-used",
+        description: "Mission Control orchestrates its own development. Hundreds of PRs, real policy gates, real evidence bundles. Every release is proof it works.",
+      },
+      {
+        title: "Production on Azure AKS",
+        description: "Full CI/CD pipeline. Not localhost demos. Temporal for workflow reliability. PostgreSQL for state. Boring, proven infrastructure.",
+      },
+      {
+        title: "Built under regulatory scrutiny",
+        description: "Built by the CTO of a VARA-regulated crypto exchange where \"move fast and break things\" gets you fined. Governance is not an afterthought — it's the product.",
+      },
+      {
+        title: "Boring stack, proven infrastructure",
+        description: "TypeScript, Fastify, Temporal, PostgreSQL, Drizzle ORM. No novel database, no experimental runtime, no single points of fragility.",
+      },
+    ]}
+  />
+
+  <CTA
+    headline="See Mission Control build itself. Live."
+    subheadline="Book a 30-minute demo. We screen-share MC running on its own codebase — real PRs, real policy gates, real evidence bundles. Not slides."
+    buttonText="Book a 30-min demo →"
+    buttonHref="https://calendly.com/sergey-fce/30min"
+    calendlyUrl="https://calendly.com/sergey-fce/30min?background_color=0a0a0b&text_color=fafafa&primary_color=3b82f6"
+  />
+
+  <!-- Email fallback -->
+  <div class="text-center -mt-16 pb-16">
+    <p class="text-sm text-[var(--text-muted)]">
+      Or email us directly: <a href="mailto:sergey@fce.global" class="text-[var(--accent-primary)] hover:underline">sergey@fce.global</a>
+    </p>
+  </div>
+
+  <Footer
+    productName="Mission Control"
+    companyName="FCE Global"
+    links={[
+      { text: "sergey@fce.global", href: "mailto:sergey@fce.global" },
+      { text: "Twitter", href: "https://twitter.com/AISergeyK" },
+      { text: "LinkedIn", href: "https://linkedin.com/in/sergeyko" },
+      { text: "GitHub", href: "https://github.com/sergey-ko" },
+    ]}
+  />
+</Base>

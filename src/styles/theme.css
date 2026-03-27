@@ -1,0 +1,8 @@
+@import 'tailwindcss';
+@import '@fce/shared/styles/tokens.css';
+
+:root {
+  --accent-primary: #3B82F6;
+  --accent-primary-dim: #2563EB;
+  --accent-btn-text: #FFFFFF;
+}

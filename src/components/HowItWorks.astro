@@ -1,0 +1,50 @@
+---
+const steps = [
+  {
+    number: '01',
+    title: 'Define policies',
+    description: 'Set your quality gates — lint rules, test coverage thresholds, security scan requirements, architectural boundaries. MC enforces them on every single PR, no exceptions.',
+  },
+  {
+    number: '02',
+    title: 'Feed tasks',
+    description: 'Push task specs from your backlog. MC analyzes complexity, assigns a risk tier, and routes to the right AI model. Architecture decisions get Opus. Boilerplate gets Haiku.',
+  },
+  {
+    number: '03',
+    title: 'AI builds in sandboxes',
+    description: 'Each agent works in an isolated Coder sandbox. No access to production. No shared state between agents. Temporal workflows ensure reliability — if an agent fails, MC retries or escalates.',
+  },
+  {
+    number: '04',
+    title: 'Review auditable PRs',
+    description: 'Every PR arrives with an evidence bundle: what was requested, what the agent did, which policy gates passed, and why every decision was made. Review the PR, not the process.',
+  },
+];
+---
+
+<section id="how-it-works" class="py-24 md:py-32 bg-[var(--bg-secondary)]">
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="text-3xl md:text-5xl font-bold text-center">You set the rules. AI does the work.</h2>
+    <p class="text-[var(--text-secondary)] text-center mt-4 max-w-3xl mx-auto text-lg leading-relaxed">
+      Mission Control handles orchestration, isolation, policy enforcement, and evidence collection. You review the results.
+    </p>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-16">
+      {steps.map((step, i) => (
+        <div class="relative p-6 rounded-xl border border-[var(--border)] bg-[var(--bg-primary)]">
+          <span class="text-4xl font-bold font-mono text-[var(--accent-primary)] opacity-40">{step.number}</span>
+          <h3 class="text-lg font-semibold mt-3">{step.title}</h3>
+          <p class="text-sm text-[var(--text-secondary)] mt-2 leading-relaxed">{step.description}</p>
+          {i < steps.length - 1 && (
+            <span class="hidden lg:block absolute top-1/2 -right-4 text-[var(--text-muted)] text-xl">&rarr;</span>
+          )}
+        </div>
+      ))}
+    </div>
+
+    <p class="text-[var(--text-secondary)] italic text-center mt-12 text-lg">
+      Hundreds of PRs. Full governance. Zero babysitting.
+    </p>
+  </div>
+</section>

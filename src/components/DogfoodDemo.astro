@@ -1,61 +1,69 @@
 ---
-import Terminal from '@fce/shared/components/Terminal.astro';
+// Video demo section — real MC workflow
 ---
 
-<section id="dogfood" class="py-24 md:py-32">
+<div class="py-24 md:py-32">
   <div class="max-w-6xl mx-auto px-6">
-    <h2 class="text-3xl md:text-5xl font-bold text-center">Mission Control builds Mission Control.</h2>
-    <p class="text-[var(--text-secondary)] text-center mt-4 max-w-3xl mx-auto text-lg md:text-xl leading-relaxed">
-      This isn't a pitch deck. Every feature exists because we needed it. Here's what a real workflow looks like.
-    </p>
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-5xl font-bold">
+        Mission Control builds <span class="text-[var(--accent-primary)]">Mission Control.</span>
+      </h2>
+      <p class="text-[var(--text-secondary)] mt-4 max-w-2xl mx-auto text-lg leading-relaxed">
+        Every feature exists because we needed it. Watch a real workflow — from task to auditable PR.
+      </p>
+    </div>
 
-    <div class="grid lg:grid-cols-2 gap-8 mt-12">
-      <!-- Terminal -->
-      <div>
-        <Terminal
-          title="Mission Control Dashboard"
-          lines={[
-            '<span class="text-[var(--text-muted)]">mc-landing / workflow #347</span>',
-            '',
-            '<span class="text-[var(--text-muted)]">Task:</span>     Add rate limiting to API endpoints',
-            '<span class="text-[var(--text-muted)]">Risk:</span>     <span class="text-[var(--color-warning)]">MEDIUM</span> → routed to Sonnet 4',
-            '<span class="text-[var(--text-muted)]">Status:</span>   <span class="text-[var(--accent-primary)]">██████████████</span><span class="text-[var(--border)]">░░░░░░</span>  70%',
-            '',
-            '<span class="text-[var(--color-success)]">✓</span> Task spec generated                    <span class="text-[var(--text-muted)]">00:03</span>',
-            '<span class="text-[var(--color-success)]">✓</span> Agent assigned (Sonnet 4)              <span class="text-[var(--text-muted)]">00:04</span>',
-            '<span class="text-[var(--color-success)]">✓</span> Implementation complete                <span class="text-[var(--text-muted)]">04:12</span>',
-            '<span class="text-[var(--color-success)]">✓</span> Lint gate passed                       <span class="text-[var(--text-muted)]">04:18</span>',
-            '<span class="text-[var(--color-success)]">✓</span> Security scan passed                   <span class="text-[var(--text-muted)]">04:31</span>',
-            '<span class="text-[var(--color-success)]">✓</span> Test coverage gate passed (94%)        <span class="text-[var(--text-muted)]">05:02</span>',
-            '<span class="text-[var(--accent-primary)]">→</span> Architectural review in progress...    <span class="text-[var(--text-muted)]">05:15</span>',
-            '',
-            '<span class="text-[var(--text-muted)]">Evidence bundle:</span> 12 artifacts collected',
-            '<span class="text-[var(--text-muted)]">PR #891</span> ready for human review',
-          ]}
-        />
+    <!-- Video embed -->
+    <div class="relative max-w-4xl mx-auto mb-16">
+      <div class="relative rounded-2xl overflow-hidden border border-[var(--border)] shadow-2xl shadow-cyan-900/10 aspect-video bg-[var(--bg-tertiary)]">
+        <!-- Replace YOUTUBE_VIDEO_ID with actual ID -->
+        <iframe
+          class="w-full h-full"
+          src="https://www.youtube.com/embed/YOUTUBE_VIDEO_ID?rel=0&modestbranding=1"
+          title="Mission Control Demo"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+          loading="lazy"
+        ></iframe>
       </div>
+    </div>
 
-      <!-- Explanation -->
-      <div class="flex flex-col gap-6 justify-center">
-        <div class="p-6 rounded-xl border border-[var(--border)] bg-[var(--bg-secondary)]">
-          <h3 class="text-lg font-semibold text-[var(--accent-primary)]">Intelligent model routing</h3>
-          <p class="text-[var(--text-secondary)] mt-2 text-sm leading-relaxed">
-            Opus for architecture decisions. Sonnet for feature work. Haiku for mechanical refactors. Stop burning money running your smartest model on boilerplate.
-          </p>
+    <!-- Three value props -->
+    <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+      <div class="p-6 rounded-xl border border-[var(--border)] bg-[var(--bg-secondary)] hover:border-[var(--border-hover)] transition-colors">
+        <div class="w-10 h-10 rounded-lg bg-cyan-500/10 flex items-center justify-center mb-4">
+          <svg class="w-5 h-5 text-[var(--accent-primary)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+          </svg>
         </div>
-        <div class="p-6 rounded-xl border border-[var(--border)] bg-[var(--bg-secondary)]">
-          <h3 class="text-lg font-semibold text-[var(--accent-primary)]">Policy gates, not vibes</h3>
-          <p class="text-[var(--text-secondary)] mt-2 text-sm leading-relaxed">
-            Every PR passes linting, security scanning, test coverage, and architectural review before a human ever sees it.
-          </p>
+        <h3 class="text-lg font-semibold">Intelligent model routing</h3>
+        <p class="text-[var(--text-secondary)] mt-2 text-sm leading-relaxed">
+          Opus for architecture. Sonnet for features. Haiku for boilerplate. The right model for the right task — automatically.
+        </p>
+      </div>
+      <div class="p-6 rounded-xl border border-[var(--border)] bg-[var(--bg-secondary)] hover:border-[var(--border-hover)] transition-colors">
+        <div class="w-10 h-10 rounded-lg bg-cyan-500/10 flex items-center justify-center mb-4">
+          <svg class="w-5 h-5 text-[var(--accent-primary)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+          </svg>
         </div>
-        <div class="p-6 rounded-xl border border-[var(--border)] bg-[var(--bg-secondary)]">
-          <h3 class="text-lg font-semibold text-[var(--accent-primary)]">Evidence bundles</h3>
-          <p class="text-[var(--text-secondary)] mt-2 text-sm leading-relaxed">
-            Every PR ships with a full audit trail — task spec, agent reasoning, policy checks passed, review decisions. Your compliance team will send you a thank-you note.
-          </p>
+        <h3 class="text-lg font-semibold">Policy gates, not vibes</h3>
+        <p class="text-[var(--text-secondary)] mt-2 text-sm leading-relaxed">
+          Lint, security scan, test coverage, architecture review — every PR passes every gate before a human sees it.
+        </p>
+      </div>
+      <div class="p-6 rounded-xl border border-[var(--border)] bg-[var(--bg-secondary)] hover:border-[var(--border-hover)] transition-colors">
+        <div class="w-10 h-10 rounded-lg bg-cyan-500/10 flex items-center justify-center mb-4">
+          <svg class="w-5 h-5 text-[var(--accent-primary)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+          </svg>
         </div>
+        <h3 class="text-lg font-semibold">Evidence bundles</h3>
+        <p class="text-[var(--text-secondary)] mt-2 text-sm leading-relaxed">
+          Full audit trail on every PR — task spec, agent reasoning, gates passed, review decisions. Compliance-ready out of the box.
+        </p>
       </div>
     </div>
   </div>
-</section>
+</div>

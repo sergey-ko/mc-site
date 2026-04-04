@@ -3,42 +3,55 @@ const steps = [
   {
     number: '01',
     title: 'Define policies',
-    description: 'Set your quality gates — lint rules, test coverage thresholds, security scan requirements, architectural boundaries. MC enforces them on every single PR, no exceptions.',
+    description: 'YAML configs in your repo. Lint rules, test coverage thresholds, security scans, architectural boundaries. MC enforces them on every PR — no exceptions, no shortcuts.',
+    accent: 'var(--accent-primary)',
   },
   {
     number: '02',
     title: 'Feed tasks',
-    description: 'Push task specs from your backlog. MC analyzes complexity, assigns a risk tier, and routes to the right AI model. Architecture decisions get Opus. Boilerplate gets Haiku.',
+    description: 'Push task specs from your backlog. MC analyzes complexity, assigns a risk tier, and routes to the right model. Architecture gets Opus. Boilerplate gets Haiku.',
+    accent: 'var(--color-info)',
   },
   {
     number: '03',
     title: 'AI builds in sandboxes',
-    description: 'Each agent works in an isolated Coder sandbox. No access to production. No shared state between agents. Temporal workflows ensure reliability — if an agent fails, MC retries or escalates.',
+    description: 'Each agent works in an isolated Coder sandbox. No production access. No shared state. Temporal workflows handle retries and escalation automatically.',
+    accent: 'var(--color-warning)',
   },
   {
     number: '04',
     title: 'Review auditable PRs',
-    description: 'Every PR arrives with an evidence bundle: what was requested, what the agent did, which policy gates passed, and why every decision was made. Review the PR, not the process.',
+    description: 'Every PR ships with an evidence bundle: what was requested, what the agent did, which gates passed, and why. Review the PR, not the process.',
+    accent: 'var(--color-success)',
   },
 ];
 ---
 
 <section id="how-it-works" class="py-24 md:py-32 bg-[var(--bg-secondary)]">
   <div class="max-w-6xl mx-auto px-6">
-    <h2 class="text-3xl md:text-5xl font-bold text-center">You set the rules. AI does the work.</h2>
-    <p class="text-[var(--text-secondary)] text-center mt-4 max-w-3xl mx-auto text-lg leading-relaxed">
-      Mission Control handles orchestration, isolation, policy enforcement, and evidence collection. You review the results.
-    </p>
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-5xl font-bold">You set the rules. AI does the work.</h2>
+      <p class="text-[var(--text-secondary)] mt-4 max-w-3xl mx-auto text-lg leading-relaxed">
+        Mission Control handles orchestration, isolation, policy enforcement, and evidence collection. You review the results.
+      </p>
+    </div>
 
-    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-16">
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
       {steps.map((step, i) => (
-        <div class="relative p-6 rounded-xl border border-[var(--border)] bg-[var(--bg-primary)]">
-          <span class="text-4xl font-bold font-mono text-[var(--accent-primary)] opacity-40">{step.number}</span>
-          <h3 class="text-lg font-semibold mt-3">{step.title}</h3>
+        <div class="relative p-6 rounded-xl border border-[var(--border)] bg-[var(--bg-primary)] hover:border-[var(--border-hover)] transition-colors">
+          <div class="flex items-center gap-3 mb-4">
+            <span
+              class="text-3xl font-bold font-mono opacity-60"
+              style={`color: ${step.accent}`}
+            >
+              {step.number}
+            </span>
+            {i < steps.length - 1 && (
+              <span class="hidden lg:block absolute top-1/2 -right-3.5 text-[var(--text-muted)] text-lg z-10">&rarr;</span>
+            )}
+          </div>
+          <h3 class="text-lg font-semibold">{step.title}</h3>
           <p class="text-sm text-[var(--text-secondary)] mt-2 leading-relaxed">{step.description}</p>
-          {i < steps.length - 1 && (
-            <span class="hidden lg:block absolute top-1/2 -right-4 text-[var(--text-muted)] text-xl">&rarr;</span>
-          )}
         </div>
       ))}
     </div>

@@ -2,7 +2,34 @@
 @import '@fce/shared/styles/tokens.css';
 
 :root {
-  --accent-primary: #3B82F6;
-  --accent-primary-dim: #2563EB;
-  --accent-btn-text: #FFFFFF;
+  /* Cyan/teal — mission control, radar, space ops */
+  --accent-primary: #06B6D4;
+  --accent-primary-dim: #0891B2;
+  --accent-btn-text: #000000;
+
+  /* Richer backgrounds with slight blue tint */
+  --bg-primary: #08090C;
+  --bg-secondary: #0D0F14;
+  --bg-tertiary: #14171E;
+  --border: #1E2230;
+  --border-hover: #2A3040;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* FAQ animation */
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+details[open] > div {
+  animation: fade-in 0.2s ease-out;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
 }

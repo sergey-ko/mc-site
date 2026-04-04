@@ -1,0 +1,55 @@
+---
+// Founder credibility section — puts a face on the product
+---
+
+<section id="founder" class="py-24 md:py-32 bg-[var(--bg-secondary)]">
+  <div class="max-w-4xl mx-auto px-6">
+    <div class="flex flex-col md:flex-row gap-8 md:gap-12 items-center">
+      <!-- Photo placeholder — replace with real headshot -->
+      <div class="shrink-0">
+        <div class="w-32 h-32 md:w-40 md:h-40 rounded-2xl bg-[var(--bg-tertiary)] border border-[var(--border)] overflow-hidden">
+          <img
+            src="/founder.jpg"
+            alt="Sergey Kovalev"
+            class="w-full h-full object-cover"
+            loading="lazy"
+            onerror="this.style.display='none'"
+          />
+        </div>
+      </div>
+
+      <!-- Bio -->
+      <div>
+        <h2 class="text-2xl md:text-3xl font-bold">Built by Sergey Kovalev</h2>
+        <p class="text-[var(--accent-primary)] font-mono text-sm mt-1 mb-4">
+          CTO &middot; 15+ years shipping production systems
+        </p>
+        <p class="text-[var(--text-secondary)] leading-relaxed">
+          I built Mission Control because I needed it. As CTO of a VARA-regulated crypto exchange,
+          I shipped production systems where every code change needed an audit trail and every
+          deployment had regulatory scrutiny. When AI coding agents arrived, the question wasn't
+          <em>"can they write code?"</em> — it was <em>"can we govern them?"</em>
+        </p>
+        <p class="text-[var(--text-secondary)] leading-relaxed mt-3">
+          Mission Control is my answer. It orchestrates its own development — every PR you see
+          in this project went through the same policy gates, evidence bundles, and risk-tier
+          routing that your team would use. I'm not selling a vision. I'm selling what I run every day.
+        </p>
+        <div class="flex gap-4 mt-6">
+          <a href="https://linkedin.com/in/sergeyko" target="_blank" rel="noopener"
+            class="text-sm text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors">
+            LinkedIn &nearr;
+          </a>
+          <a href="https://twitter.com/AISergeyK" target="_blank" rel="noopener"
+            class="text-sm text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors">
+            Twitter &nearr;
+          </a>
+          <a href="https://github.com/sergey-ko" target="_blank" rel="noopener"
+            class="text-sm text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors">
+            GitHub &nearr;
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

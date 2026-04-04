@@ -1,0 +1,52 @@
+---
+const screenshots = [
+  {
+    src: "/screenshots/dashboard.png",
+    alt: "Mission Control Pipeline — kanban board with work items across stages",
+    label: "Pipeline",
+    caption: "100 work items tracked across stages. Full visibility, one board.",
+  },
+  {
+    src: "/screenshots/evidence-bundle.png",
+    alt: "Work item detail with merge approval, policy gates, activity log",
+    label: "Work Item",
+    caption: "Merge approval with confidence scores. Policy gate results. Full activity history.",
+  },
+  {
+    src: "/screenshots/policy-gates.png",
+    alt: "Execution dashboard — 541 runs, success rates, active agents",
+    label: "Execution",
+    caption: "541 runs. 316 successful. Real numbers from production.",
+  },
+];
+---
+
+<section id="product" class="py-24 md:py-32 bg-[var(--bg-secondary)]">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-5xl font-bold">Real product. Real production.</h2>
+      <p class="text-[var(--text-secondary)] mt-4 text-lg">
+        Not mockups. Not Figma. Screenshots from the system that builds itself.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      {screenshots.map((shot) => (
+        <div class="group">
+          <div class="rounded-xl overflow-hidden border border-[var(--border)] bg-[var(--bg-tertiary)] group-hover:border-[var(--border-hover)] transition-colors">
+            <img
+              src={shot.src}
+              alt={shot.alt}
+              class="w-full h-auto"
+              loading="lazy"
+            />
+          </div>
+          <div class="mt-4">
+            <span class="text-[var(--accent-primary)] font-mono text-xs uppercase tracking-wider">{shot.label}</span>
+            <p class="text-sm text-[var(--text-secondary)] mt-1">{shot.caption}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

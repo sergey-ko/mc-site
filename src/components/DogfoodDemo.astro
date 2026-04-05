@@ -15,17 +15,19 @@
 
     <!-- Video embed -->
     <div class="relative max-w-4xl mx-auto mb-16">
-      <div class="relative rounded-2xl overflow-hidden border border-[var(--border)] shadow-2xl shadow-cyan-900/10 aspect-video bg-[var(--bg-tertiary)]">
-        <!-- Replace YOUTUBE_VIDEO_ID with actual ID -->
-        <iframe
-          class="w-full h-full"
-          src="https://www.youtube.com/embed/YOUTUBE_VIDEO_ID?rel=0&modestbranding=1"
-          title="Mission Control Demo"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-          loading="lazy"
-        ></iframe>
+      <div class="relative rounded-2xl overflow-hidden border border-[var(--border)] shadow-2xl shadow-cyan-900/10 aspect-video bg-[var(--bg-tertiary)] flex items-center justify-center">
+        <!-- Demo video — replace with YouTube embed when ready -->
+        <div class="text-center px-6">
+          <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center">
+            <svg class="w-8 h-8 text-[var(--accent-primary)]" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z" />
+            </svg>
+          </div>
+          <p class="text-[var(--text-secondary)] text-lg font-medium">Demo video coming soon</p>
+          <p class="text-[var(--text-muted)] text-sm mt-2">
+            <a href="https://calendly.com/skaskapro/30min" class="text-[var(--accent-primary)] hover:underline">Book a live demo</a> — I'll screen-share MC building itself in real time.
+          </p>
+        </div>
       </div>
     </div>
 

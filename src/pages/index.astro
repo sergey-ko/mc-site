@@ -38,13 +38,18 @@ import '../styles/theme.css';
       "creator": {
         "@type": "Person",
         "name": "Sergey Kovalev",
-        "url": "https://linkedin.com/in/sergeyko"
+        "url": "https://linkedin.com/in/skovalev"
       }
     })} />
   </Fragment>
 
   <Nav
     logo="Mission Control"
+    links={[
+      { text: "Demo", href: "#demo" },
+      { text: "How It Works", href: "#how-it-works" },
+      { text: "FAQ", href: "#faq" },
+    ]}
     ctaText="Book a Demo →"
     ctaHref="https://calendly.com/skaskapro/30min"
   />
@@ -233,7 +238,7 @@ import '../styles/theme.css';
 
   <div class="text-center -mt-16 pb-16">
     <p class="text-sm text-[var(--text-muted)]">
-      Or email directly: <a href="mailto:sergey@kovalev.dev" class="text-[var(--accent-primary)] hover:underline">sergey@kovalev.dev</a>
+      Or email directly: <a href="mailto:sergey@misco.dev" class="text-[var(--accent-primary)] hover:underline">sergey@misco.dev</a>
     </p>
   </div>
 
@@ -241,9 +246,9 @@ import '../styles/theme.css';
     productName="Mission Control"
     companyName="Sergey Kovalev"
     links={[
-      { text: "sergey@kovalev.dev", href: "mailto:sergey@kovalev.dev" },
+      { text: "sergey@misco.dev", href: "mailto:sergey@misco.dev" },
       { text: "Twitter", href: "https://twitter.com/AISergeyK" },
-      { text: "LinkedIn", href: "https://linkedin.com/in/sergeyko" },
+      { text: "LinkedIn", href: "https://linkedin.com/in/skovalev" },
       { text: "GitHub", href: "https://github.com/sergey-ko" },
     ]}
   />

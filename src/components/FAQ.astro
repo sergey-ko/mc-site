@@ -1,28 +1,32 @@
 ---
 const faqs = [
   {
+    question: "Do I need to pay for API tokens?",
+    answer: "No. Mission Control works with your existing Anthropic subscription (Max plan). You're already paying for Claude — MC just orchestrates it properly. No per-token API bills, no surprise invoices.",
+  },
+  {
+    question: "I'm a solo CTO / architect. Is MC overkill for one person?",
+    answer: "It's the opposite — MC was built by a solo CTO who got tired of the manual work. If you're juggling worktrees, rerunning pipelines, and babysitting agents, MC gives you back that time. One person with MC ships like a team of ten.",
+  },
+  {
     question: "What languages and frameworks does MC support?",
-    answer: "Any codebase that AI coding agents can work with. MC orchestrates the agents — it doesn't care if your project is TypeScript, Python, Go, or Rust. If Claude Code or another agent can build in it, MC can govern it.",
+    answer: "Any codebase that AI coding agents can work with. MC orchestrates the agents — it doesn't care if your project is TypeScript, Python, Go, or Rust. If Claude Code can build in it, MC can govern it.",
   },
   {
     question: "Which AI models are supported?",
-    answer: "Currently optimized for Anthropic's Claude family (Opus, Sonnet, Haiku) with risk-tier routing — the right model for the right task. Support for additional model providers is on the roadmap.",
-  },
-  {
-    question: "How do I define policies?",
-    answer: "Policies are YAML configuration files in your repo. You define quality gates (lint, test coverage, security scans), risk tiers (which changes need which model), and escalation rules. MC ships with sensible defaults — most teams customize from there.",
-  },
-  {
-    question: "What does the pilot engagement look like?",
-    answer: "4 weeks. We deploy MC on one of your repos, configure policies together, and run the first 50 PRs. You measure the delta — velocity, quality, cost. If the numbers don't work, you walk away. No lock-in.",
-  },
-  {
-    question: "Is my code sent to external services?",
-    answer: "Your code goes to the AI model provider (Anthropic) for processing — same as if your developers used Claude directly. MC itself runs on your infrastructure (self-hosted) or on a dedicated instance we manage. We never store your source code.",
+    answer: "Currently optimized for Anthropic's Claude family (Opus, Sonnet, Haiku) with automatic risk-tier routing — the right model for the right task. Opus for architecture decisions. Haiku for boilerplate. Your subscription covers all of them.",
   },
   {
     question: "How is MC different from just using Claude Code directly?",
-    answer: "Claude Code is a single agent, single task. MC is the fleet manager — it handles parallel execution, policy enforcement, risk-tier routing, evidence collection, and Temporal-based reliability across hundreds of tasks. Think of it as the difference between one developer and an engineering org.",
+    answer: "Claude Code is a single agent working on a single task. MC is the fleet manager — parallel execution, automatic worktree management, policy enforcement, evidence collection, and Temporal-based reliability. The difference between one developer and an engineering org.",
+  },
+  {
+    question: "What does the pilot look like?",
+    answer: "2 weeks. I deploy MC on one of your repos, configure policies together, and we run the first 20 PRs. You measure the delta — velocity, quality, time saved. If the numbers don't work, you walk away.",
+  },
+  {
+    question: "Do I need to care about governance and audit trails?",
+    answer: "Not necessarily — but you'll want them. Even if you're not in a regulated industry, knowing exactly what your AI did and why on every PR is just good engineering. And if you ever need to explain a change to a client or team lead, the evidence bundle is already there.",
   },
 ];
 ---
@@ -31,7 +35,7 @@ const faqs = [
   <div class="max-w-3xl mx-auto px-6">
     <h2 class="text-3xl md:text-5xl font-bold text-center mb-4">Frequently asked questions</h2>
     <p class="text-[var(--text-secondary)] text-center mb-12">
-      Don't see your question? <a href="mailto:sergey@kovalev.dev" class="text-[var(--accent-primary)] hover:underline">Email me directly</a>.
+      Don't see your question? <a href="mailto:sergey@kovalev.dev" class="text-[var(--accent-primary)] hover:underline">Ask me directly</a>.
     </p>
 
     <div class="space-y-4">

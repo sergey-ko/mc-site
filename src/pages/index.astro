@@ -3,7 +3,7 @@ import Base from '@fce/shared/layouts/Base.astro';
 import Nav from '@fce/shared/components/Nav.astro';
 import Button from '@fce/shared/components/Button.astro';
 import ComparisonTable from '@fce/shared/components/ComparisonTable.astro';
-import PricingTable from '@fce/shared/components/PricingTable.astro';
+
 import CTA from '@fce/shared/components/CTA.astro';
 import Footer from '@fce/shared/components/Footer.astro';
 
@@ -17,8 +17,8 @@ import '../styles/theme.css';
 ---
 
 <Base
-  title="Mission Control — AI Coding at Scale, Governed"
-  description="Your AI agents write thousands of lines. Can you explain any of them to an auditor? Mission Control governs AI coding fleets with policy gates, evidence bundles, and intelligent model routing."
+  title="Mission Control — Stop Babysitting Your AI Agents"
+  description="You're juggling worktrees, rerunning pipelines, and burning API tokens. Mission Control orchestrates your AI coding agents so you ship code, not manage processes. Uses your Anthropic subscription — no API bills."
   ogImage="/og-image.png"
 >
   <Fragment slot="head">
@@ -59,22 +59,27 @@ import '../styles/theme.css';
 
     <div class="relative max-w-5xl mx-auto px-6 text-center py-32">
       <p class="text-[var(--accent-primary)] font-mono text-sm tracking-wider mb-8 uppercase">
-        SDLC Control Plane
+        Stop babysitting AI agents
       </p>
 
       <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight">
-        Your AI agents wrote<br />
-        <span class="text-[var(--text-secondary)]">10,000 lines last week.</span>
+        You code with AI.<br />
+        <span class="text-[var(--text-secondary)]">But who manages the AI?</span>
       </h1>
 
       <div class="mt-8 space-y-2 text-lg md:text-xl text-[var(--text-muted)]">
-        <p>Can you explain any of them to an auditor?</p>
-        <p>Can you prove which policy gates they passed?</p>
-        <p>Can you even tell which model wrote what?</p>
+        <p>Juggling worktrees. Rerunning pipelines. Context-switching between repos.</p>
+        <p>Babysitting agents that crash and lose work.</p>
+        <p>Burning API tokens on boilerplate that Haiku could handle.</p>
       </div>
 
       <p class="mt-8 text-2xl md:text-3xl font-semibold text-[var(--accent-primary)]">
-        Mission Control can.
+        Mission Control does all of that for you.
+      </p>
+
+      <!-- Subscription callout -->
+      <p class="mt-4 text-sm text-[var(--text-muted)] font-mono">
+        Works with your Anthropic subscription — no API token bills.
       </p>
 
       <div class="flex flex-col sm:flex-row gap-4 justify-center mt-10">
@@ -112,49 +117,49 @@ import '../styles/theme.css';
 
   <!-- 5. Comparison -->
   <ComparisonTable
-    headline="AI coding without governance is just technical debt at scale."
-    columns={["With Mission Control", "Without Mission Control"]}
+    headline="You're doing too much manually."
+    columns={["With Mission Control", "Without it"]}
     rows={[
       {
-        label: "Code quality",
+        label: "Workflow",
         values: [
-          "Policy gates enforce consistent standards on every PR",
-          "Varies wildly between agents and prompts"
+          "Feed tasks, get auditable PRs. One dashboard.",
+          "Juggle worktrees, switch folders, babysit each agent"
         ]
       },
       {
-        label: "Audit trail",
+        label: "Cost",
         values: [
-          "Full evidence bundle: task spec, reasoning, gates passed",
-          "\"The AI wrote it\" — good luck explaining that to auditors"
+          "Uses your Anthropic subscription — no per-token API bills",
+          "Burning API credits on every run, no cost control"
         ]
       },
       {
-        label: "Model costs",
+        label: "Model selection",
         values: [
-          "Risk-tier routing: Opus for hard problems, Haiku for easy ones",
-          "One model for everything, burning budget on boilerplate"
+          "Opus for architecture, Sonnet for features, Haiku for boilerplate — automatic",
+          "One model for everything, overpaying for simple tasks"
         ]
       },
       {
-        label: "Reliability",
+        label: "When agents crash",
         values: [
-          "Temporal workflows: automatic retry, state recovery, escalation",
-          "Agent crashes = lost work, manual restart"
+          "Temporal auto-retries, recovers state, escalates if needed",
+          "Lost work, manual restart, figure out what went wrong"
         ]
       },
       {
         label: "Scale",
         values: [
-          "Parallel fleets, hundreds of PRs, one dashboard",
-          "One agent, one task, one developer babysitting"
+          "Parallel agents, hundreds of PRs, zero babysitting",
+          "One agent, one task, wait for it to finish"
         ]
       },
       {
-        label: "Security",
+        label: "Audit trail",
         values: [
-          "Sandboxed Coder instances, zero production access",
-          "Agents with production access, shared environments"
+          "Full evidence bundle on every PR — task spec, reasoning, gates passed",
+          "\"The AI wrote it\" — good luck explaining that"
         ]
       },
     ]}
@@ -163,53 +168,57 @@ import '../styles/theme.css';
   <!-- 6. Founder credibility -->
   <Founder />
 
-  <!-- 7. Pricing -->
-  <PricingTable
-    headline="Ship like a team of ten. Pay like a team of one."
-    subheadline="Start with a pilot. Scale when you see the numbers. Cancel monthly."
-    tiers={[
-      {
-        name: "Pilot",
-        price: "$5K",
-        description: "flat — Prove it works on your codebase",
-        features: [
-          "2-week hands-on engagement",
-          "MC deployed on your repo",
-          "First 20 PRs together",
-          "Success criteria defined upfront",
-          "Walk away if the numbers don't work",
-        ],
-        cta: { text: "Start a pilot →", href: "https://calendly.com/skaskapro/30min" },
-      },
-      {
-        name: "Solo",
-        price: "$1-2K",
-        description: "per month — For technical leaders shipping alone",
-        features: [
-          "Self-hosted MC instance",
-          "Single repo, full policy engine",
-          "Intelligent model routing",
-          "Evidence bundles on every PR",
-          "Ongoing updates",
-        ],
-        cta: { text: "Get started →", href: "https://calendly.com/skaskapro/30min" },
-        highlighted: true,
-      },
-      {
-        name: "Team",
-        price: "$3-5K",
-        description: "per month — For teams of 3-8 shipping at scale",
-        features: [
-          "Multi-repo support",
-          "Team access and permissions",
-          "Priority support",
-          "Quarterly review and optimization",
-          "Custom policy templates",
-        ],
-        cta: { text: "Talk to me →", href: "https://calendly.com/skaskapro/30min" },
-      },
-    ]}
-  />
+  <!-- 7. Beta access -->
+  <section id="access" class="py-24 md:py-32">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <span class="inline-block bg-cyan-500/10 text-[var(--accent-primary)] text-xs font-mono px-4 py-1.5 rounded-full border border-cyan-500/20 mb-6">
+        PRIVATE BETA
+      </span>
+      <h2 class="text-3xl md:text-5xl font-bold">Ship like a team of ten.<br />Pay like a team of one.</h2>
+      <p class="text-[var(--text-secondary)] mt-4 text-lg max-w-2xl mx-auto">
+        Mission Control is in private beta. Limited spots. Uses your Anthropic subscription — no API token bills on top.
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-6 mt-12 max-w-3xl mx-auto text-left">
+        <!-- Beta access card -->
+        <div class="p-8 rounded-xl border border-[var(--accent-primary)]/30 bg-[var(--bg-secondary)] relative">
+          <div class="absolute -top-3 left-6">
+            <span class="bg-[var(--accent-primary)] text-black text-xs font-bold px-3 py-1 rounded-full">LIMITED SPOTS</span>
+          </div>
+          <h3 class="text-xl font-bold mt-2">Private Beta</h3>
+          <p class="text-[var(--text-muted)] text-sm mt-1 mb-4">For solo CTOs and small teams</p>
+          <ul class="space-y-3 text-sm text-[var(--text-secondary)]">
+            <li class="flex gap-2"><span class="text-[var(--accent-primary)]">&#10003;</span> Full MC instance on your infra</li>
+            <li class="flex gap-2"><span class="text-[var(--accent-primary)]">&#10003;</span> Policy engine + model routing</li>
+            <li class="flex gap-2"><span class="text-[var(--accent-primary)]">&#10003;</span> Evidence bundles on every PR</li>
+            <li class="flex gap-2"><span class="text-[var(--accent-primary)]">&#10003;</span> Direct access to me for setup</li>
+            <li class="flex gap-2"><span class="text-[var(--accent-primary)]">&#10003;</span> Works with your Anthropic subscription</li>
+          </ul>
+          <a href="https://calendly.com/skaskapro/30min"
+            class="block mt-6 text-center bg-[var(--accent-primary)] text-black font-semibold px-6 py-3 rounded-lg hover:opacity-90 transition-opacity">
+            Request access →
+          </a>
+        </div>
+
+        <!-- Free for OSS card -->
+        <div class="p-8 rounded-xl border border-[var(--border)] bg-[var(--bg-secondary)]">
+          <h3 class="text-xl font-bold">Free for Open Source</h3>
+          <p class="text-[var(--text-muted)] text-sm mt-1 mb-4">Give back to the community</p>
+          <ul class="space-y-3 text-sm text-[var(--text-secondary)]">
+            <li class="flex gap-2"><span class="text-[var(--color-success)]">&#10003;</span> Full MC — no feature gates</li>
+            <li class="flex gap-2"><span class="text-[var(--color-success)]">&#10003;</span> Public repos only</li>
+            <li class="flex gap-2"><span class="text-[var(--color-success)]">&#10003;</span> Self-hosted, self-managed</li>
+            <li class="flex gap-2"><span class="text-[var(--color-success)]">&#10003;</span> Community support</li>
+            <li class="flex gap-2"><span class="text-[var(--color-success)]">&#10003;</span> We may feature your project as a case study</li>
+          </ul>
+          <a href="https://calendly.com/skaskapro/30min"
+            class="block mt-6 text-center border border-[var(--border)] hover:border-[var(--border-hover)] text-[var(--text-primary)] font-semibold px-6 py-3 rounded-lg transition-colors">
+            Apply for OSS access →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- 8. FAQ -->
   <FAQ />
